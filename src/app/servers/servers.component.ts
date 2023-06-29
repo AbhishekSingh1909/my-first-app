@@ -19,6 +19,7 @@ import { Component } from '@angular/core';
   styles: [`h1{color: red}`]
 })
 export class ServersComponent {
+  serverCreated = false;
 allowserver : boolean = false;
 serverCreationStaus : string = 'No Server is created';
 serverName = 'testServer';
@@ -28,6 +29,7 @@ constructor() {
 }
 onServerCreation() : string
 {
+  this.serverCreated = true;
   return this.serverCreationStaus ='Server is created and Name of server is '+ this.serverName;
 }
 onUpdateServerName(event: any)
