@@ -8,5 +8,11 @@
 <button class="btn btn-primary" [disabled] = "!allowserver" (click) = 'onServerCreation()'> Add Server </button>
 <!--when we want show data use string interpolation-->
 <p>{{serverCreationStaus}}</p>
+<p>Infornation about server creation </p>
+<p *ngIf="serverCreated; else noServer"> server was created {{ serverName}}</p>
+<ng-template #noServer>
+    <p>no server was created</p>
+
+</ng-template>
 
 <app-server></app-server>
