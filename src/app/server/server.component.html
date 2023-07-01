@@ -1,2 +1,6 @@
 <!--databinding string interpolation example with variable and function call when we need to pass data from ts to html-->
-<p>{{'server'}} with Id {{serverId}} is {{getServerStatus()}}</p>
+<p [ngClass] ="{ 'online' : serverStatus === 'online'}" 
+   [ngStyle]="{ backgroundColor :getColor() }" 
+ 
+ >{{'server'}} with Id {{serverId}} is {{getServerStatus()}}" 
+     </p>
