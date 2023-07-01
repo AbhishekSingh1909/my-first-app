@@ -16,13 +16,14 @@ import { Component } from '@angular/core';
 
   // tempalatURL
   templateUrl : './servers.component.html',
-  styles: [`h1{color: red}`]
+  styles: [`.online {color : white}`]
 })
 export class ServersComponent {
   serverCreated = false;
 allowserver : boolean = false;
 serverCreationStaus : string = 'No Server is created';
 serverName = 'testServer';
+Servers = ['TestServer1','TestServer2'];
 
 constructor() {
   setTimeout(()=>{this.allowserver = true;},2000)
@@ -30,6 +31,7 @@ constructor() {
 onServerCreation() : string
 {
   this.serverCreated = true;
+  this.Servers.push(this.serverName);
   return this.serverCreationStaus ='Server is created and Name of server is '+ this.serverName;
 }
 onUpdateServerName(event: any)
